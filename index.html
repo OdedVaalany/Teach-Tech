@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,79 +7,235 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Document</title>
-		<link rel="stylesheet" href="Home_desktop.css" />
+		<link rel="icon" href="assets/icon64x64.png" />
+		<title>Teach Tech</title>
+
+		<style>
+			@import url(https://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+			html {
+				direction: rtl;
+				padding: 0px;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: 'Alef Hebrew', sans-serif;
+				box-sizing: border-box;
+			}
+			.buffer {
+				padding: 10px 10vw 10px 10vw;
+			}
+
+			.view {
+				width: 100vw;
+				height: 100vh;
+			}
+
+			#navbar-wrapper {
+				width: 100vw;
+				padding: 1vh 10vw;
+				position: fixed;
+				background-color: rgba(255, 255, 255, 0.441);
+				backdrop-filter: blur(3px);
+				box-shadow: 0px 0px 10px gray;
+			}
+
+			#navbar {
+				background-color: transparent;
+				width: 100%;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				color: #6466a7;
+			}
+
+			#navbar img {
+				justify-self: right;
+				align-self: center;
+			}
+
+			#navbar h1 {
+				justify-self: center;
+				align-self: center;
+			}
+
+			#navbar div {
+				justify-self: left;
+				align-self: center;
+				width: fit-content;
+			}
+
+			#navbar div a {
+				text-decoration: none;
+				color: #6466a7;
+				font-size: 1.25vw;
+				padding: 0 10px;
+			}
+
+			#navbar div a:hover {
+				color: #f58b7c;
+			}
+
+			#main_view {
+				/* background: radial-gradient(
+						circle,
+						#ffae005f 10%,
+						transparent 11%
+					),
+					radial-gradient(
+						circle at bottom left,
+						#ffae005f 5%,
+						transparent 6%
+					),
+					radial-gradient(
+						circle at bottom right,
+						#ffae005f 5%,
+						transparent 6%
+					),
+					radial-gradient(
+						circle at top left,
+						#ffae005f 5%,
+						transparent 6%
+					),
+					radial-gradient(
+						circle at top right,
+						#ffae005f 5%,
+						transparent 6%
+					);
+				background-size: 2em 2em;
+				background-color: #ffffff;
+				opacity: 1; */
+				background-image: url('assets/backgrounds/main_view_background.svg');
+				padding-top: 100px;
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				grid-template-rows: 1fr 1fr 1fr;
+			}
+
+			#main_view *:nth-child(1) {
+				grid-row: 1/4;
+			}
+
+			#main_view h1 {
+				font-size: 36pt;
+				align-self: end;
+				color: #6466a7;
+			}
+
+			#main_view h2 {
+				font-size: 20pt;
+				font-weight: lighter;
+				align-self: start;
+				color: #6466a7;
+				padding: 10px;
+			}
+
+			#main_view a {
+				font-size: 16pt;
+				text-decoration: none;
+				padding: 10px;
+				width: fit-content;
+				height: fit-content;
+				border: 2px solid #6466a7;
+				color: #6466a7;
+			}
+
+			#main_view a:hover {
+				background-color: #6466a7;
+				color: white;
+			}
+
+			#about-us {
+				background-image: url(./assets/backgrounds/about_us_view_background.svg);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.glass {
+				background-color: rgba(255, 255, 255, 0.7);
+				backdrop-filter: blur(10px);
+				box-shadow: 3px 3px 24px -1px rgba(128, 128, 128, 0.5);
+			}
+
+			#about-us-card {
+				padding: 1vh 1vw;
+				width: 100%;
+				height: 70%;
+				display: grid;
+			}
+
+			#be-part {
+				background-image: url(/assets/backgrounds/be_part_view_background.svg);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+
+		<script src="./secret.js">
+
+
+			         window.onload = function(){
+			                      console.log("hello");
+			         }
+			// async function sendEmail(name, email, subject, message) {
+			// 	const data = JSON.stringify({
+			// 	  "Messages": [{
+			// 	    "From": {"Email": "<YOUR EMAIL>", "Name": "<YOUR NAME>"},
+			// 	    "To": [{"Email": email, "Name": name}],
+			// 	    "Subject": subject,
+			// 	    "TextPart": message
+			// 	  }]
+			// 	});
+
+			// 	const config = {
+			// 	  method: 'post',
+			// 	  url: 'https://api.mailjet.com/v3.1/send',
+			// 	  data: data,
+			// 	  headers: {'Content-Type': 'application/json'},
+			// 	  auth: {username: '<API Key>', password: '<Secret Key>'},
+			// 	};
+			//          }
+		</script>
 	</head>
 	<body>
-		<img id="figure2" src="assets/Language learning app.svg" />
-		<img id="figure3" src="assets/Machine learning.svg" />
-		<img id="figure1" src="assets/designer_1.svg" />
-
-		<div id="navbar">
-			<p>Teach-Tech</p>
-			<div>
-				<a href="#">בית</a>
-				<a href="#">אודות</a>
-				<a href="#">הצטרפו לקהילה שלנו</a>
-				<a href="#">צור קשר</a>
-			</div>
-		</div>
-		<div id="home" class="scene">
-			<h1>
-				כלים טכנולוגים לעידוד <br />
-				המעורבות
-			</h1>
-			<p>איך ללמד בצורה חדשנית, לעורר סקרנות ולערב את הלומדים והקהל</p>
-			<div>
-				<a href="#">רשימת הכלים המלאה</a>
-				<a href="#">איזה כלי מתאים לי?</a>
-			</div>
-		</div>
-		<div class="scene" id="howthisiswork">
-			<div id="grid">
-				<img src="./assets/language learning app interface.png" />
+		<div id="navbar-wrapper">
+			<div id="navbar">
+				<img src="assets/icon64x64.png" />
+				<h1>Teach-Tech</h1>
 				<div>
-					<h3>איך זה עובד בעצם?</h3>
-					<p>
-						כל כלי שתבחרו או תיחשפו אליו כאן יכלול שני דברים
-						מרכזיים:
-						<br /><br />
-						&#x2022; מדריך מפורט הכולל הסברים מפורטים ותמונות
-						<br /><br />&#x2022; דוגמאות מוכנות ונוחות לעריכה
-						<br /><br />
-						אז למה אתם מחכים?
-					</p>
-				</div>
-				<div>
-					<h6>אל תשכח להצטרף לקהילה</h6>
-					<p>
-						כולם מוזמנים להצטרף לקהילה!<br />
-						בואו לשתף את הדברים שיצרתם, לקבל השראה <br />ורעיונות
-						מאחרים, לשאול שאלות ולבקש עזרה
-					</p>
-				</div>
-				<div>
-					<h6>לא בטוחים איזה כלי מתאים לכם?</h6>
-					<p>
-						יש כל כך הרבה כלים שממש קל ללכת לאיבוד, את רוב הכלים
-						יכול להיות שאנחנו אפילו לא מכירים.<br />
-						אבל אל דאגה! בעמוד הראשי נמצא שאלון התאמה, שיתאים לכם
-						את הכלי שאתם צריכים כמו כפפה ליד!
-					</p>
+					<a href="#">בית</a>
+					<a href="#">אודות</a>
+					<a href="#">הצטרפו לקהילה שלנו</a>
+					<a href="#">צור קשר</a>
 				</div>
 			</div>
 		</div>
-		<div class="scene">
-			<div class="tool-scene">
-				<object
-					data="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"
-				></object>
-				<h3>title</h3>
-				<p>des</p>
-				<h3>יתרונות וחסרונות</h3>
-				<button>hello</button>
-				<button>hello</button>
-				<button>hello</button>
+		<div class="view buffer" id="main_view">
+			<div></div>
+			<h1>כלים טכנולוגים לעידוד המעורבות</h1>
+			<h2>
+				איך להעביר תוכן בצורה חדשנית, לעורר סקרנות ולערב את הלומדים
+				והקהל
+			</h2>
+			<a href="#">לרשימת הכלים המלאה</a>
+		</div>
+		<div class="view buffer" id="about-us">
+			<div class="glass" id="about-us-card">
+				<h1>אודות</h1>
+			</div>
+		</div>
+		<div class="view buffer" id="be-part">
+			<div class="glass" id="about-us-card">
+				<h1>בואו להצטרך לקהילה שלנו</h1>
+				<img />
+			</div>
+		</div>
+		<div class="view buffer" id="about-us">
+			<div class="glass" id="about-us-card">
+				<h1>אודות</h1>
 			</div>
 		</div>
 	</body>
