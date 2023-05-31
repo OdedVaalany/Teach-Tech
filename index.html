@@ -9,238 +9,7 @@
 		/>
 		<link rel="icon" href="assets/icon64x64.png" />
 		<title>Teach Tech</title>
-
-		<style>
-			@import url(https://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-
-			html {
-				direction: rtl;
-				padding: 0px;
-			}
-
-			* {
-				margin: 0;
-				padding: 0;
-				font-family: 'Alef Hebrew', sans-serif;
-				box-sizing: border-box;
-			}
-			.buffer {
-				padding: 10px 10vw 10px 10vw;
-			}
-
-			.view {
-				width: 100vw;
-				height: 100vh;
-			}
-
-			#navbar-wrapper {
-				width: 100vw;
-				padding: 1vh 10vw;
-				position: fixed;
-				background-color: rgba(255, 255, 255, 0.441);
-				backdrop-filter: blur(3px);
-				box-shadow: 0px 0px 10px gray;
-			}
-
-			#navbar {
-				background-color: transparent;
-				width: 100%;
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-				color: #6466a7;
-			}
-
-			#navbar img {
-				justify-self: right;
-				align-self: center;
-			}
-
-			#navbar h1 {
-				justify-self: center;
-				align-self: center;
-			}
-
-			#navbar div {
-				justify-self: left;
-				align-self: center;
-				width: fit-content;
-			}
-
-			#navbar div a {
-				text-decoration: none;
-				color: #6466a7;
-				font-size: 1.25vw;
-				padding: 0 10px;
-			}
-
-			#navbar div a:hover {
-				color: #f58b7c;
-			}
-
-			#main_view {
-				/* background: radial-gradient(
-						circle,
-						#ffae005f 10%,
-						transparent 11%
-					),
-					radial-gradient(
-						circle at bottom left,
-						#ffae005f 5%,
-						transparent 6%
-					),
-					radial-gradient(
-						circle at bottom right,
-						#ffae005f 5%,
-						transparent 6%
-					),
-					radial-gradient(
-						circle at top left,
-						#ffae005f 5%,
-						transparent 6%
-					),
-					radial-gradient(
-						circle at top right,
-						#ffae005f 5%,
-						transparent 6%
-					);
-				background-size: 2em 2em;
-				background-color: #ffffff;
-				opacity: 1; */
-				background-image: url('assets/backgrounds/main_view_background.svg');
-				padding-top: 100px;
-				display: grid;
-				grid-template-columns: 1fr 2fr;
-				grid-template-rows: 1fr 1fr 1fr;
-			}
-
-			#main_view *:nth-child(1) {
-				grid-row: 1/4;
-			}
-
-			#main_view h1 {
-				font-size: 36pt;
-				align-self: end;
-				color: #6466a7;
-			}
-
-			#main_view h2 {
-				font-size: 20pt;
-				font-weight: lighter;
-				align-self: start;
-				color: #6466a7;
-				padding: 10px;
-			}
-
-			#main_view a {
-				font-size: 16pt;
-				text-decoration: none;
-				padding: 10px;
-				width: fit-content;
-				height: fit-content;
-				border: 2px solid #6466a7;
-				color: #6466a7;
-			}
-
-			#main_view a:hover {
-				background-color: #6466a7;
-				color: white;
-			}
-
-			#about-us {
-				background-image: url(./assets/backgrounds/about_us_view_background.svg);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			.glass {
-				background-color: rgba(255, 255, 255, 0.7);
-				backdrop-filter: blur(10px);
-				box-shadow: 3px 3px 24px -1px rgba(128, 128, 128, 0.5);
-			}
-
-			#about-us-card {
-				padding: 1vh 1vw;
-				width: 100%;
-				height: 70%;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: 1fr 1fr 1fr 1fr;
-			}
-
-			#about-us-card *:nth-child(1) {
-				grid-column: 2/3;
-				grid-row: 1/5;
-				width: 100%;
-				clip-path: circle(30% at 50% 35%);
-			}
-
-			#be-part {
-				background-image: url(/assets/backgrounds/be_part_view_background.svg);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			#be-part-card {
-				color: #225b52;
-				padding: 1vh 1vw;
-				width: 100%;
-				height: 70%;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: 1fr 1fr 1fr;
-			}
-
-			#be-part-card p {
-				font-size: 16pt;
-			}
-
-			#be-part-card #contact-links {
-				justify-self: right;
-				align-self: end;
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-
-			#be-part-card #contact-links a {
-				text-decoration: none;
-				color: #225b52;
-				display: flex;
-				justify-items: center;
-				align-items: center;
-				border: 2px solid #225b52;
-				height: fit-content;
-				width: fit-content;
-				padding: 0px 10px;
-			}
-
-			#be-part-card #contact-links a:hover {
-				background-color: #225b52;
-				color: white;
-			}
-
-			#be-part-card #contact-links a svg {
-				width: 16px;
-				height: 16px;
-				margin: 10px;
-				fill: #225b52;
-				object-fit: contain;
-			}
-
-			#be-part-card #contact-links a:hover svg {
-				fill: white;
-			}
-
-			#be-part-card *:nth-child(1) {
-				grid-column: 2/3;
-				grid-row: 1/4;
-				object-fit: contain;
-				width: 100%;
-				align-self: end;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div id="navbar-wrapper">
@@ -248,10 +17,9 @@
 				<img src="assets/icon64x64.png" />
 				<h1>Teach-Tech</h1>
 				<div>
-					<a href="#">בית</a>
-					<a href="#">אודות</a>
-					<a href="#">הצטרפו לקהילה שלנו</a>
-					<a href="#">צור קשר</a>
+					<a href="#main_view">בית</a>
+					<a href="#about-us">אודות</a>
+					<a href="#be-part">הצטרפו לקהילה שלנו</a>
 				</div>
 			</div>
 		</div>
@@ -262,7 +30,10 @@
 				איך להעביר תוכן בצורה חדשנית, לעורר סקרנות ולערב את הלומדים
 				והקהל
 			</h2>
-			<a href="#">לרשימת הכלים המלאה</a>
+			<div>
+				<a href="tools.html">לרשימת הכלים המלאה</a>
+				<a href="guides.html">גלו מדריכים</a>
+			</div>
 		</div>
 		<div class="view buffer" id="about-us">
 			<div class="glass" id="about-us-card">
@@ -311,7 +82,9 @@
 					</p>
 				</div>
 				<div id="contact-links">
-					<a href="#">
+					<a
+						href="https://m.facebook.com/groups/569712398618164/?ref=sharehttps://m.facebook.com/groups/569712398618164/?ref%3Dshare&exp=93fa&mibextid=S66gvF"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="64"
@@ -329,7 +102,7 @@
 						</svg>
 						הצטרפו לקבוצת הפייסבוק
 					</a>
-					<a href="#">
+					<a href="https://chat.whatsapp.com/IfTsBJiSHQRGxdthjm8tuH">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="64"
